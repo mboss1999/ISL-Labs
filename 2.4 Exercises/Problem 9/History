@@ -1,0 +1,43 @@
+auto=read.csv("Auto.csv")
+?range
+auto=read.csv("Auto.csv",na.strings="?")
+range(auto$mpg)
+summary(auto)
+sd(auto$horsepower)
+sd(auto$mpg)
+sd(auto$cylinders)
+sd(auto$lsfd)
+sd(auto$horsepower)
+sd(auto[,4])
+sd(auto[,5])
+?sd
+sd(auot$horsepower, na.rm=FALSE)
+sd(auto$horsepower, na.rm=FALSE)
+sd(auto$horsepower, na.rm=TRUE)
+sd(auto$weight)
+sd(auot%acceleration)
+sd(auto%acceleration)
+sd(auto$acceleration)
+range(auto$year)
+sd(auto$year)
+sd(auto$origin)
+sd(auto$name)
+auto=auto[-10:85,]
+auto=auto[-(10:85),]
+#Find range and mean of predictors
+summary(auto)
+#Find standard deviation of predictors
+sd(auto$mpg)
+sd(auto$cylinders)
+sd(auto$displacement)
+sd(auto$horsepower, na.rm=FALSE)
+sd(auto$horsepower, na.rm=TRUE)
+sd(auto$weight)
+sd(auto$acceleration)
+sd(auto$year)
+#Analyze the original auto dataset graphically
+Auto=read.csv("Auto.csv", na.strings="?")
+pairs(Auto[,1:8])
+#Displacement, horsepower, weight, and accleration seem to be useful in predicting mpg. Mpg decreases with horsepower, weight, and acceleration.
+#Mpg increases with acceleration.
+save.image("C:\\Users\\mboss\\OneDrive\\Documents\\Data Science Projects\\Introduction to Statistical Learning with Applications in R\\2.4 Exercises\\Problem 9\\Workspace")

@@ -1,0 +1,25 @@
+#Load in the Boston data set
+library(MASS)
+Boston
+?Boston
+#Make scatterplots of predictor pairs
+pairs(Boston[,1:14])
+#Find the range of each predictor from the summary of Boston 
+summary(Boston)
+#Find how many suburbs bound the Charles river
+OnCharles=rep("No",nrow(Boston))
+OnCharles[Boston$chas>0]="Yes"
+OnCharles=as.factor(OnCharles)
+summary(OnCharles)
+#35 suburbs are bound to the Charles river
+#Find median pupil-teacher ratio
+summary(Boston$ptratio)
+#The median pupil-teacher ratio is 19.05
+#Find the suburb with the lowest median of owner-occupied homes
+Boston[which.min(Boston$medv,)]
+#Suburb 399 has the lowest median of owner-occupied homes
+#Find how many suburbs average more than 7 or 8 rooms per dwelling
+sum(Boston$rm > 7)
+sum(Boston$rm > 8)
+#64 suburbs average more than 7 rooms per dwelling
+#13 suburbs average more than 8 rooms per dwelling
